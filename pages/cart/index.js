@@ -127,7 +127,7 @@ import {
         const carts = getCarts();
   
         const client = new ApolloClient({
-          uri: `${process.env.SERVER_URL}/graphql`,
+          uri: `https://restless-snowflake-6771.fly.dev/graphql`,
           cache: new InMemoryCache(),
         });
   
