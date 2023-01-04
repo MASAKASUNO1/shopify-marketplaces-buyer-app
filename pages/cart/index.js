@@ -43,6 +43,7 @@ import {
       }
     }
   `;
+
   
   const getShopTotals = lineItems => {
     const totalNumberOfItems = lineItems.reduce((total, {node}) => total + node.quantity, 0);
