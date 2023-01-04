@@ -5,7 +5,7 @@ import { createTheme, ThemeProvider } from "@mui/material";
 
 function MarketplaceProvider(props) {
   const client = new ApolloClient({
-    uri: `http://localhost:8081/graphql`,
+    uri: `${process.env.SERVER_URL}/graphql`,
     cache: new InMemoryCache(),
   });
 
