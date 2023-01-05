@@ -373,7 +373,9 @@ const Product = () => {
             />
           </Container>
           <Container>
+            <Typography color={'#909090'} variant="caption">商品名</Typography>
             <Typography variant="h1">{product.title}</Typography>
+            <Box mt={2} />
             <Typography variant="subtitle1" component="span">
               {price}
             </Typography>
@@ -385,7 +387,7 @@ const Product = () => {
                 variant="outlined"
                 sx={{ height: "56px", width: "208px" }}
               >
-                ADD TO CART
+                カートに追加する
               </Button>
 
               <Button
@@ -394,7 +396,7 @@ const Product = () => {
                 sx={{ height: "56px", width: "208px" }}
                 variant="contained"
               >
-                BUY NOW
+                今すぐ買う
               </Button>
             </Stack>
           </Container>
@@ -403,7 +405,8 @@ const Product = () => {
       <Container>
         <Box sx={{ mt: 8, borderBottom: 1, borderColor: "divider" }}>
           <Tabs value={tabValue} onChange={handleTabChange} aria-label="tabs">
-            <Tab label="SPECIFICATIONS" />
+            <Tab label="商品の説明" />
+            <Tab label="こだわりのメッセージ" />
             {shopDetails?.refundPolicy && (
               <Tab label="RETURN POLICY" />
             )}
@@ -452,7 +455,7 @@ const Product = () => {
       </Container>
       {recommendedProducts?.length > 0 && <Container maxWidth="xl">
         <Divider />
-        <Typography variant="h2" mt={6} mb={4}>YOU MAY ALSO LIKE</Typography>
+        <Typography variant="h2" mt={6} mb={4}>もう一品いかがですか？😆</Typography>
         <ProductGrid products={recommendedProducts} shopId={shopId} showLinks={false} />
       </Container>}
     </Page>

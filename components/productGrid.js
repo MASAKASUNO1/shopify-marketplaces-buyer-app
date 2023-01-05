@@ -52,14 +52,14 @@ const ProductTile = ({
           {priceString}
         </Typography>
         {showLinks && <>
-          <Link variant="button" href={onlineStoreUrl} target="_blank">
-            View on online store
-          </Link>
           <NextLink href={`/products/${shopId}/${handle}`}>
             <Link variant="button" href="">
-              View Product Details
+              詳細ページへ
             </Link>
           </NextLink>
+          {/* <Link variant="button" href={onlineStoreUrl} target="_blank">
+            ストアで見る
+          </Link> */}
         </>}
       </Stack>
     </Stack>
@@ -71,7 +71,7 @@ const ProductTile = ({
     return (
       <Container m={2}>
         <Typography variant="body2" align="center">
-          No products
+        Loading ...
         </Typography>
       </Container>
     );

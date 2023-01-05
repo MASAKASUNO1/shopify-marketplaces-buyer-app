@@ -95,11 +95,11 @@ import {
               />
             </Box>
             <FormControl>
-              <InputLabel id="quantityLabel">Quantity</InputLabel>
+              <InputLabel id="quantityLabel">個数</InputLabel>
               <Select
                 labelId="selectQuantityLabel"
                 id="selectQuantity"
-                label="Quantity"
+                label="個数"
                 value={node.quantity}
                 onChange={(e) => onSetNewQuantity(cartId, node.id, e.target.value, shopDomain)}
               >
@@ -273,7 +273,7 @@ import {
                   sx={{ height: "56px", width: "100%" }}
                   variant="contained"
                 >
-                  GO TO CHECKOUT
+                  チェックアウト
                 </Button>
               </Box>
             </Stack>
@@ -285,7 +285,7 @@ import {
         cartsSummary.push(
           <Stack direction="row" justifyContent="space-between" mt={2} key={shopDomain} spacing={2}>
             <Box>
-              <Typography variant="h3">{shopTotals.totalNumberOfItems} items from {shopInfo[shopDomain].name}</Typography>
+              <Typography variant="h3">『{shopInfo[shopDomain].name}』で{shopTotals.totalNumberOfItems}個の商品</Typography>
               <ul>
                 {
                   shopTotals.itemsInfo.map((itemInfo, index) => <li key={index}><Typography variant="body1">{itemInfo}</Typography></li>)
@@ -302,7 +302,7 @@ import {
           <Stack border="1px solid #D7D7DB" padding={2} mb={3} key={shopDomain} spacing={2}>
             <Typography variant="h2">{shopInfo[shopDomain].name}</Typography>
             <Divider />
-            <Typography variant="body1">Checkout has already been completed for this shop!</Typography>
+            <Typography variant="body1">既にチェックアウト済みです</Typography>
           </Stack>
         );
       }
@@ -315,7 +315,7 @@ import {
   
     cartsSummaryContainer = (
       <Stack border="1px solid #D7D7DB" padding={2} spacing={2}>
-        <Typography variant="h2">CART SUMMARY</Typography>
+        <Typography variant="h2">カートの概要</Typography>
         <Divider />
         {cartsSummary}
         <Divider />
@@ -324,7 +324,7 @@ import {
           direction="row"
           justifyContent="space-between"
         >
-          <Typography variant="subtitle2">CART TOTAL</Typography>
+          <Typography variant="subtitle2">カート内全ての価格</Typography>
           <Typography variant="body2">{formattedTotalPrice}</Typography>
         </Stack>
       </Stack>
@@ -338,7 +338,7 @@ import {
       <Page>
         <Container maxWidth="xl" sx={{ mt: 15 }}>
           <Container maxWidth="xl" sx={{ mb: 2 }}>
-            <Typography variant="h1">YOUR CART ({cartTotalNumberOfItems} ITEMS)</Typography>
+            <Typography variant="h1">合計{cartTotalNumberOfItems}点</Typography>
           </Container>
           <Grid mt={2} container spacing={3} direction={{ md: "row-reverse" }}>
             <Grid item xs={12} sm={12} md={6} lg={4}>

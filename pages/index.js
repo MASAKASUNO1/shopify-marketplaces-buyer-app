@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Head from "next/head";
 import NextLink from "next/link";
 import { useQuery } from "react-apollo";
 import gql from "graphql-tag";
@@ -19,10 +18,9 @@ import {
   styled,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import { getCartCount } from "../helpers/cartHelpers";
 import { Page, ProductGrid } from "../components";
 
-const allCountries = "All";
+const allCountries = "全てのショップ";
 
 export const SHOPS_QUERY = gql`
   query Shops($country: String, $name: String, $reverse: Boolean) {
@@ -161,7 +159,7 @@ const ShopSection = ({ id, domain, storefrontAccessToken }) => {
         <Typography variant="h2">{data.shop.name}</Typography>
         <NextLink href={`/shops/${id}`}>
           <Link variant="button" href="">
-            View all products
+            全ての商品を見る
           </Link>
         </NextLink>
       </Stack>
@@ -187,7 +185,7 @@ const SubHeader = ({
   >
     <Stack flexDirection="row" justifyContent="space-between">
       <FormControl style={{ minWidth: "120px" }}>
-        <InputLabel id="selectCountryLabel">Show Stores From</InputLabel>
+        <InputLabel id="selectCountryLabel">ストアの表示</InputLabel>
         <Select
           labelId="selectCountryLabel"
           id="selectCountry"
@@ -208,22 +206,24 @@ const SubHeader = ({
             <SearchIcon />
           </SearchIconWrapper>
           <StyledInputBase
-            placeholder="Search…"
+            placeholder="ここに検索"
             inputProps={{ "aria-label": "search" }}
-            onKeyDown={onSearchKeyDown}
+            onKeyDown={() => {
+              window.alert("検索はいい感じに動かなかったので、見直しが必要")
+            }}
           />
         </Search>
         <FormControl>
-          <InputLabel id="setSortLabel">Sort Names</InputLabel>
+          <InputLabel id="setSortLabel">ソート</InputLabel>
           <Select
             labelId="setSortLabel"
             id="sortSelect"
             value={descendingSort}
-            label="Sort Names"
+            label="ソート"
             onChange={setSort}
           >
-            <MenuItem value={false}>Ascending</MenuItem>
-            <MenuItem value={true}>Descending</MenuItem>
+            <MenuItem value={false}>昇順</MenuItem>
+            <MenuItem value={true}>降順</MenuItem>
           </Select>
         </FormControl>
       </Stack>
@@ -254,7 +254,7 @@ const ShopsSection = ({ shops }) => {
     return (
       <Stack mt={15} alignItems="center">
         <Typography variant="h3" component="span">
-          No shops
+          Loading ...
         </Typography>
       </Stack>
     );

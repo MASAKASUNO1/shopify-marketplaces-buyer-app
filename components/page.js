@@ -9,6 +9,7 @@ import {
   Toolbar,
   Stack,
   Typography,
+  Button,
 } from "@mui/material";
 import { ShoppingCart } from "@mui/icons-material";
 import NextLink from "next/link";
@@ -50,7 +51,10 @@ const Page = ({ children, subHeader }) => {
                 alignItems="center"
               >
                 <NextLink href="/">
-                  <Link href=""><img src="/logo.svg" alt="Mockingbird" /></Link>
+                  <Box>
+                    <Typography color="#006D51" variant="h2">厳選やさい市場</Typography>
+                    <Typography fontSize={12} variant="caption">ShopifyMarketPlaceKitのデモになります</Typography>
+                  </Box>
                 </NextLink>
                 <NextLink href="/cart">
                   <Link href="/cart">
@@ -81,23 +85,28 @@ const Page = ({ children, subHeader }) => {
           }}
         >
           {children}
+          <Box display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} p={2} gap={1.5} >
+            <img src="https://placehold.jp/150x150.png"/>
+            <Typography>このプロダクトはシンプルなNext.jsプロジェクトですので自由にカスタマイズできます</Typography>
+            <Button size={'large'} variant={'contained'} onClick={() => {window.alert("おはようございます")}}>納得</Button>
+          </Box>
+
         </Container>
       </main>
       <Divider />
       <footer>
         <Stack
-          direction="row"
+          direction="column"
           justifyContent="center"
           alignItems="center"
-          spacing={2}
           flexWrap="wrap"
           sx={{
             pt: 4,
             pb: 4,
           }}
         >
-          <Link href="https://www.shopify.com/" target="_blank" rel="noopener"><img alt="Shopify" src="/shopify-logo.svg" /></Link>
-          <Typography textAlign="center" variant="body1">MockingBird is a Shopify demo that uses <span style={{fontWeight: 600}}>Marketplace Kit</span> to build <span style={{fontWeight: 600}}>Marketplaces</span></Typography>
+         <Typography textAlign="center" variant="body1">✅🍗このプロダクトは,ShopifyMarketPlaceKitがどのようなプロダクトかを試すために作成しています🍗✅</Typography>
+         {/* <Typography textAlign="center" variant="body1">MockingBird is a Shopify demo that uses to build <span style={{fontWeight: 600}}>Marketplaces</span></Typography> */}
         </Stack>
       </footer>
     </>

@@ -678,7 +678,7 @@ import {
         <Page>
           <Container maxWidth="xl">
             <Typography variant="h3" component="div" textAlign="center" pt={2}>
-              Shop not found
+              Loading
             </Typography>
           </Container>
         </Page>
