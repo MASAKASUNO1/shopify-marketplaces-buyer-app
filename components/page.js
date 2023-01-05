@@ -85,11 +85,6 @@ const Page = ({ children, subHeader }) => {
           }}
         >
           {children}
-          <Box display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} p={2} gap={1.5} >
-            <img src="https://placehold.jp/150x150.png"/>
-            <Typography>このプロダクトはシンプルなNext.jsプロジェクトですので自由にカスタマイズできます</Typography>
-            <Button size={'large'} variant={'contained'} onClick={() => {window.alert("おはようございます")}}>納得</Button>
-          </Box>
 
         </Container>
       </main>

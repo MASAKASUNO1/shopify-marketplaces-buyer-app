@@ -16,6 +16,8 @@ import {
   Typography,
   alpha,
   styled,
+  Box,
+  Button,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { Page, ProductGrid } from "../components";
@@ -341,6 +343,12 @@ const Index = () => {
     >
       <Container maxWidth="xl" sx={{ mt: "150px" }}>
         <ShopsSection shops={data?.shops} />
+        <Box display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} p={2} gap={1.5} >
+            <img src="https://placehold.jp/150x150.png"/>
+            <Typography>このプロダクトはシンプルなNext.jsプロジェクトですので自由にカスタマイズできます</Typography>
+            <Button size={'large'} variant={'contained'} onClick={() => {window.alert("おはようございます")}}>納得</Button>
+          </Box>
+
       </Container>
     </Page>
   );
